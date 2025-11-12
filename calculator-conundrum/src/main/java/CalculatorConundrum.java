@@ -36,7 +36,7 @@ class CalculatorConundrum {
     private void validateOperation(String operation) {
         if (operation == null) {
             throw new IllegalArgumentException("Operation cannot be null");
-        } else if (operation.trim().equals("")) {
+        } else if (operation.isEmpty()) {
             throw new IllegalArgumentException("Operation cannot be empty");
         } else if(!VALID_OPERATIONS.contains(operation)) {
             throw new IllegalOperationException(String.format("Operation '%s' does not exist", operation));
