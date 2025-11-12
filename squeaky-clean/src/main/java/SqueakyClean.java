@@ -21,7 +21,7 @@ class SqueakyClean {
 
         StringBuilder sb = new StringBuilder();
         boolean[] capitalizeNext = {false};
-        identifier.chars().forEach(ch -> {
+        identifier.chars().mapToObj(ch -> (char)ch).forEach(ch -> {
             //Replace White Spaces with Underscore
             if(ch==WHITESPACE) {
                 sb.append(UNDERSCORE);
@@ -32,14 +32,14 @@ class SqueakyClean {
                 capitalizeNext[0] = true;
             }
             //Leet Speak to Normal Text
-            else if (LEET_MAP.containsKey((char)ch)) {
-                char nextChar = LEET_MAP.get((char)ch);
+            else if (LEET_MAP.containsKey(ch)) {
+                char nextChar = LEET_MAP.get(ch);
                 sb.append(capitalizeNext[0]? Character.toUpperCase(nextChar) : nextChar);
                 capitalizeNext[0] = false;
             }
             //Remove no letters
             else if (Character.isLetter(ch) || ch==UNDERSCORE) {
-                sb.append(capitalizeNext[0]? Character.toUpperCase((char)ch) : (char)ch);
+                sb.append(capitalizeNext[0]? Character.toUpperCase(ch) : ch);
                 capitalizeNext[0] = false;
             } 
         });
