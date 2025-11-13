@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="JedliksToyCarTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-11-13T14:03:46" hostname="Joses-MacBook-Air.local" time="0.032">
+<testsuite name="JedliksToyCarTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-11-13T14:10:28" hostname="Joses-MacBook-Air.local" time="0.034">
   <properties/>
-  <testcase name="The static buy method returns a new remote controlled car instance" classname="JedliksToyCarTest" time="0.025"/>
+  <testcase name="The static buy method returns a new remote controlled car instance" classname="JedliksToyCarTest" time="0.027"/>
   <testcase name="The distanceDisplay method shows the correct message after driving and draining all battery" classname="JedliksToyCarTest" time="0.002"/>
   <testcase name="The distanceDisplay method shows the correct message after driving once" classname="JedliksToyCarTest" time="0.0"/>
   <testcase name="The static buy method returns each time a new remote controlled car instance" classname="JedliksToyCarTest" time="0.0"/>
