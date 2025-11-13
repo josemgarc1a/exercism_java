@@ -1,6 +1,6 @@
 class ProductionRemoteControlCar implements RemoteControlCar, Comparable<ProductionRemoteControlCar> {
 
-    private final int UNITS_PER_DRIVE = 10;
+    private static final int UNITS_PER_DRIVE = 10;
     private int lifeTimeTravelledUnits = 0;
     private int numberOfVictories = 0;
 

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestTrack {
@@ -7,7 +8,8 @@ public class TestTrack {
     }
 
     public static List<ProductionRemoteControlCar> getRankedCars(List<ProductionRemoteControlCar> cars) {
-        cars.sort(java.util.Collections.reverseOrder());
-        return cars;
+        var rankedCard = new ArrayList<>(cars);
+        rankedCard.sort(java.util.Collections.reverseOrder());
+        return rankedCard;
     }
 }
