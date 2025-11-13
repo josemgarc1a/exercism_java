@@ -1,7 +1,7 @@
 class NeedForSpeed {
 
-    private int speedInMeters;
-    private int batteryDrain;
+    private final int speedInMeters;
+    private final int batteryDrain;
 
     private int metersDriven = 0;
     private int currentBattery = 100;
@@ -14,7 +14,7 @@ class NeedForSpeed {
     }
 
     public boolean batteryDrained() {
-        return batteryDrain>currentBattery;
+        return batteryDrain > currentBattery;
     }
 
     public int distanceDriven() {
@@ -28,7 +28,7 @@ class NeedForSpeed {
     }
 
     public int fullBatteryRange() {
-        return speedInMeters * (100/batteryDrain);
+        return speedInMeters * (100 / batteryDrain);
     }
 
     public static NeedForSpeed nitro() {
@@ -38,7 +38,7 @@ class NeedForSpeed {
 
 class RaceTrack {
 
-    private int raceTrackDistance;
+    private final int raceTrackDistance;
 
     RaceTrack(int distance) {
         raceTrackDistance = distance;
