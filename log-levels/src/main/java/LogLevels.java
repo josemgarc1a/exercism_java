@@ -1,11 +1,19 @@
 public class LogLevels {
+
+    private static final String COLON_STRING = ":";
+    private static final String CLOSING_BRACKET_STRING = "]";
     
     public static String message(String logLine) {
-        return logLine.split(":")[1].trim();
+        int colon = logLine.indexOf(COLON_STRING);
+        return logLine.substring(colon+1).trim();
     }
 
     public static String logLevel(String logLine) {
-        return logLine.substring(1, logLine.indexOf(":")-1).toLowerCase();
+        int closingBraket = logLine.indexOf(CLOSING_BRACKET_STRING);
+        if ( closingBraket > 0 ) {
+            return logLine.substring(1, closingBraket).toLowerCase();
+        }
+        return "";
     }
 
     public static String reformat(String logLine) {
