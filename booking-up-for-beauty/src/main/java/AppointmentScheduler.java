@@ -1,24 +1,35 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 class AppointmentScheduler {
+
+    private static final DateTimeFormatter DESCRIPTION_FORMAT = 
+                DateTimeFormatter.ofPattern("EEEE, MMMM d, yyyy, 'at' h:mm a");
+
     public LocalDateTime schedule(String appointmentDateDescription) {
-        throw new UnsupportedOperationException("Please implement the AppointmentScheduler.schedule() method");
+        String[] dateAndTime = appointmentDateDescription.split(" ");
+        DateTimeFormatter parser = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        LocalDate date = LocalDate.parse(dateAndTime[0], parser);
+        return LocalDateTime.parse(date.toString()+"T"+dateAndTime[1]);
     }
 
     public boolean hasPassed(LocalDateTime appointmentDate) {
-        throw new UnsupportedOperationException("Please implement the AppointmentScheduler.hasPassed() method");
+        LocalDateTime ldt = LocalDateTime.now();
+        return ldt.isAfter(appointmentDate);
     }
 
     public boolean isAfternoonAppointment(LocalDateTime appointmentDate) {
-        throw new UnsupportedOperationException("Please implement the AppointmentScheduler.isAfternoonAppointment() method");
+        return 12 <= appointmentDate.getHour() && appointmentDate.getHour() <=17;
     }
 
     public String getDescription(LocalDateTime appointmentDate) {
-        throw new UnsupportedOperationException("Please implement the AppointmentScheduler.getDescription() method");
+        return "You have an appointment on "
+            + appointmentDate.format(DESCRIPTION_FORMAT)
+            + ".";
     }
 
     public LocalDate getAnniversaryDate() {
-        throw new UnsupportedOperationException("Please implement the AppointmentScheduler.getAnniversaryDate() method");
+        return LocalDate.of(LocalDate.now().getYear(), 9, 15);
     }
 }
